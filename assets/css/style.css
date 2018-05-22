@@ -1,0 +1,35 @@
+
+body {
+    /* background: blueviolet; */
+    background: url("../images/hey-arnold.jpg");
+    background-repeat: no-repeat;
+}
+
+.trivia-questions {
+    background: pink;
+    color: black;
+    border-radius: 25px;
+    opacity: 0.8;
+    padding: 30px;
+    float: right;
+    margin: 15px;
+}
+
+#hey-arnold{
+    color: rgb(255, 221, 227);
+    font-size: 50px;
+    text-align: right;
+    padding: 20px;
+
+}
+
+#start-btn{
+    float: right;
+    padding: 5,20,5,20;
+}
+
+.timer-screen{
+    color: rgb(255, 221, 227);
+    text-align: right;
+    padding-right: 50px;
+}
