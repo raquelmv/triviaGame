@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 var win = 0;
 var loss= 0;
-var countDown= 50;
+var countDown= 10;
 var playerAnswer1;
 var playerAnswer2;
 var playerAnswer3;
@@ -39,16 +39,16 @@ $("#start-btn").click(function(){
         });
         $(".reset").css( {
             'display': 'block'
-        })
+        });
     timer();
     console.log(timer);
   });
   
 // ----TIMER FUNCTION
-    function timer () {
+    function timer() {
         if (countDown > 0) {
-            setTimeout(countDown, 5000);
-            $("#count-down").html('<h5> ' + countDown + ' seconds left!</h5>');
+            setTimeout(scoreBoard, 1000);
+            setInterval(countDownUpdate,1000);
         }
         else {
 //--- WHEN TIMER REACHES 0: store playersGuess, compare with correctAnswers update "#score-board"
@@ -57,6 +57,13 @@ $("#start-btn").click(function(){
            scoreBoard();
         }
     }
+//---countDownUpdate function 
+   function countDownUpdate() {
+       countDown--; 
+       if (countDown>0){
+        $("#number-count").html('<h5> ' + countDown + ' seconds left!</h5>');
+       }
+   }
 //---create array of players answers to LATER compare with array of correct answers.
 function arrayOfAnswers() {
 	playerAnswers.push(playerAnswer1);
@@ -83,23 +90,23 @@ function compareArray() {
 	}
 //---GETS VALUE OF CLICK-->
 
-$(".question-1").on('click', function (storeTriviaBtnAnswer) {	
+$(".question-1").on('click', function (storeBtnAnswer) {	
 	playerAnswer1 = $('input[name="question-1"]:checked').val();
 	}); 
 
-$('.question-2').on('click', function (storeTriviaBtnAnswer) {	
+$('.question-2').on('click', function (storeBtnAnswer) {	
 	playerAnswer2 = $('input[name="question-2"]:checked').val();
 	}); 
 
-$('.question-3').on('click', function (storeTriviaBtnAnswer) {	
+$('.question-3').on('click', function (storeBtnAnswer) {	
 	playerAnswer3 = $('input[name="question-3"]:checked').val();
     }); 
 
-$('.question-4').on('click', function (storeTriviaBtnAnswer) {	
+$('.question-4').on('click', function (storeBtnAnswer) {	
     playerAnswer4 = $('input[name="question-4"]:checked').val();
     }); 
 
-$('.question-5').on('click', function (storeTriviaBtnAnswer) {	
+$('.question-5').on('click', function (storeBtnAnswer) {	
 	playerAnswer5 = $('input[name="question-5"]:checked').val();
     }); 
     
